@@ -101,9 +101,9 @@
       background: #b22854;
     }
 
-    /* ================================
-       ADAPTACIÓN PARA CELULARES
-    ================================= */
+    /* ===================================================
+       MODO MÓVIL — FOTOS DETRÁS, TRANSPARENTES Y SUAVES
+    ==================================================== */
     @media (max-width: 600px) {
 
       body {
@@ -131,8 +131,24 @@
         padding: 12px 22px;
       }
 
+      /* --- FOTOS DE FONDO --- */
       .floating-photo {
-        width: 130px;
+        width: 120px;
+        opacity: 0.23 !important;
+        z-index: -2 !important;
+        filter: blur(1px);
+      }
+
+      .safe-area, h1, p, button {
+        position: relative;
+        z-index: 10 !important;
+      }
+
+      /* Suavizar el movimiento en móviles */
+      @keyframes floatPhoto {
+        0%   { transform: translateY(-20px); opacity: 0.20; }
+        50%  { transform: translateY(-70px); opacity: 0.23; }
+        100% { transform: translateY(-20px); opacity: 0.20; }
       }
     }
 
