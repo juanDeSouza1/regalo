@@ -25,7 +25,7 @@
     .safe-area {
       max-width: 700px;
       margin: auto;
-      padding: 10px 20px; /* SUBE TODO EL CONTENIDO */
+      padding: 40px 20px;
       text-align: center;
       animation: fadeIn 1.4s ease;
       z-index: 10;
@@ -86,7 +86,7 @@
     }
 
     #playMusic {
-      margin-top: -10px; /* SUBE EL BOTÓN / AUDIO */
+      margin-top: 20px;
       padding: 10px 20px;
       font-size: 1rem;
       border: none;
@@ -100,6 +100,42 @@
     #playMusic:hover {
       background: #b22854;
     }
+
+    /* ================================
+       ADAPTACIÓN PARA CELULARES
+    ================================= */
+    @media (max-width: 600px) {
+
+      body {
+        overflow: auto;
+      }
+
+      .safe-area {
+        padding: 20px 18px;
+        margin-top: 20px;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+        line-height: 1.2;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+
+      #playMusic {
+        margin-top: 10px;
+        font-size: 0.95rem;
+        padding: 12px 22px;
+      }
+
+      .floating-photo {
+        width: 130px;
+      }
+    }
+
   </style>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
@@ -142,12 +178,6 @@
   <img class="floating-photo" src="12.jpeg">
 
   <script>
-    /* =============================
-        4 FOTOS ALEATORIAS
-        2 IZQUIERDA - 2 DERECHA
-        SIN SOLAPARSE
-    ==============================*/
-
     const photos = document.querySelectorAll(".floating-photo");
 
     function shuffle(array) {
@@ -206,7 +236,6 @@
     showPhotos();
     setInterval(showPhotos, 6000);
 
-    /* --- Partículas --- */
     particlesJS("particles-js", {
       particles: {
         number: { value: 90 },
@@ -217,7 +246,6 @@
       }
     });
 
-    /* --- Música --- */
     document.getElementById("playMusic").onclick = () => {
       document.getElementById("song").play();
     };
