@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Para Vos 💖</title>
+  <title>Para Vos Dukito💖</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Sacramento&display=swap" rel="stylesheet">
 
   <style>
@@ -103,7 +103,7 @@
     }
 
     /* ===================================================
-       MODO MÓVIL — FOTOS DETRÁS, TRANSPARENTES Y SUAVES
+       MODO MÓVIL — OCULTAR FOTOS COMPLETAMENTE
     ==================================================== */
     @media (max-width: 600px) {
 
@@ -132,25 +132,11 @@
         padding: 12px 22px;
       }
 
-      /* --- FOTOS DE FONDO --- */
+      /* --- OCULTAR FOTOS EN MOBILE --- */
       .floating-photo {
-        width: 120px;
-        opacity: 0.23 !important;
-        z-index: -2 !important;
-        filter: blur(1px);
+        display: none !important;
       }
 
-      .safe-area, h1, p, button {
-        position: relative;
-        z-index: 10 !important;
-      }
-
-      /* Suavizar el movimiento en móviles */
-      @keyframes floatPhoto {
-        0%   { transform: translateY(-20px); opacity: 0.20; }
-        50%  { transform: translateY(-70px); opacity: 0.23; }
-        100% { transform: translateY(-20px); opacity: 0.20; }
-      }
     }
 
   </style>
